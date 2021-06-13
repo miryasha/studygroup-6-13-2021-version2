@@ -1,0 +1,18 @@
+
+use car_database;
+
+create table name (
+name_id int not null auto_increment primary key,
+name varchar(50)
+);
+
+create table car (
+
+car_id int not null auto_increment primary key,
+car_make varchar(20),
+car_color varchar(20),
+name_id int
+
+);
+
+alter table car add constraint fk_name foreign key (name_id) references name(name_id);
